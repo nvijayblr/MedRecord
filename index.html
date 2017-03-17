@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Meta-Information -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>MedVision360</title>
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="assets/loading-bar/loading-bar.css">
+		<link rel="stylesheet" type="text/css" href="assets/angular-nvd3-1.0.9/nv.d3.css">
+	</head>
+	
+	<body ng-app="medVision" ng-controller="appCtrl">
+		<section id="services" class="section section-padded">
+			<div class="container">
+				<div class="row services">
+					<div class="col-md-4">
+						<a href="#bloodpressure" alt="Blood pressure" class="service" ng-class="activeView=='bloodpressure'?'active':''" ng-click="activeView='bloodpressure';">
+							<div class="icon-holder">
+								<img src="assets/images/heart-blue.png" alt="" class="icon">
+							</div>
+							<h4 class="heading">Blood pressure</h4>
+						</a>
+					</div>
+					<div class="col-md-4">
+						<a href="#bmi" alt="BMI" class="service" ng-class="activeView=='BMI'?'active':''" ng-click="activeView='BMI';">
+							<div class="icon-holder">
+								<img src="assets/images/weight-blue.png" alt="" class="icon">
+							</div>
+							<h4 class="heading">BMI</h4>
+						</a>
+					</div>
+					<div class="col-md-4">
+						<a href="#acq" alt="ACQ" class="service" ng-class="activeView=='ACQ'?'active':''" ng-click="activeView='ACQ';">
+							<div class="icon-holder">
+								<img src="assets/images/guru-blue.png" alt="" class="icon">
+							</div>
+							<h4 class="heading">ACQ</h4>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="cut cut-bottom"></div>
+			<div class="container">
+				<div ui-view></div>
+			</div>
+		</section>
+	</body>
+	
+	<!--begin libs-->
+	<script src="assets/angular/jquery.min.js"></script>
+	<script src="assets/angular/angular.min.js"></script>
+	<script src="assets/angular/angular-ui-router.js"></script>
+	<script src="assets/loading-bar/loading-bar.min.js"></script>
+	
+	<!--begin angular-nvd3 charts-->
+	<script src="assets/angular-nvd3-1.0.9/d3.min.js"></script>
+	<script src="assets/angular-nvd3-1.0.9/nv.d3.js"></script>
+	<script src="assets/angular-nvd3-1.0.9/angular-nvd3.js"></script>
+	
+	<script src="assets/moment/moment.js"></script>
+	
+	<script src="appJS/app.js"></script>
+
+	<!--begin services-->
+	<script src="appJS/services/BaseServices.js"></script>
+	<script src="appJS/services/HttpServices.js"></script>
+
+	<!--begin controllers-->
+	<script src="appJS/controllers/medVisionCtrl.js"></script>
+	<script src="appJS/controllers/appCtrl.js"></script>
+	<script src="appJS/controllers/bloodpressureCtrl.js"></script>
+	<script src="appJS/controllers/bmiCtrl.js"></script>
+	<script src="appJS/controllers/acqCtrl.js"></script>
+	<!--end controllers-->
+</html>

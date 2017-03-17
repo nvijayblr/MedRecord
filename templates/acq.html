@@ -1,0 +1,9 @@
+<section class="chart-panel">
+	<div>
+		<b>ehrId : </b>
+		<input type="text" ng-model="ehrId" class="form-control inline"> 
+		<a ng-click="init(ehrId)" href="" class="btn btn-default btn-md">Go</a>
+	</div>
+	<div class="loading" ng-if="!chartLoaded">Loading...</div>
+	<nvd3 options="options" data="data"></nvd3>
+</section>
